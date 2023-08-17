@@ -32,7 +32,7 @@ const AppNavbar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem id={"Tooltip-" + 6}>
-              <NavLink href="https://github.com/Sethuram52001/Path-Finding-Visualizer">
+              <NavLink href="https://github.com/saikiran6694/path_visualiser">
                 GitHub
               </NavLink>
             </NavItem>
