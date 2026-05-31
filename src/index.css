@@ -1,0 +1,112 @@
+:root {
+  /* Core palette — "mission control" */
+  --bg-deep: #0a0e1a;
+  --bg-panel: #11172b;
+  --bg-panel-2: #161d36;
+  --bg-elevated: #1c2542;
+  --grid-bg: #0d1322;
+  --grid-line: rgba(120, 144, 200, 0.10);
+
+  --text: #e8edff;
+  --text-dim: #8a96bd;
+  --text-faint: #5a6489;
+
+  /* Accents */
+  --cyan: #2ee6d6;
+  --cyan-soft: rgba(46, 230, 214, 0.16);
+  --amber: #ffb13b;
+  --amber-soft: rgba(255, 177, 59, 0.16);
+  --rose: #ff5d73;
+  --emerald: #34e08a;
+  --violet: #9b8cff;
+
+  --border: rgba(140, 160, 220, 0.14);
+  --border-bright: rgba(140, 160, 220, 0.28);
+  --shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.7);
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-display);
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(46, 230, 214, 0.07), transparent 60%),
+    radial-gradient(1000px 700px at 95% 0%, rgba(155, 140, 255, 0.07), transparent 55%),
+    var(--bg-deep);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* subtle grain / scanline texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.012) 0px,
+    rgba(255, 255, 255, 0.012) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.5;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+/* Light theme overrides (DarkModeToggle adds .LightMode when "sun" is on) */
+body.LightMode {
+  --bg-deep: #eef1fb;
+  --bg-panel: #ffffff;
+  --bg-panel-2: #f4f6fd;
+  --bg-elevated: #ffffff;
+  --grid-bg: #f7f9ff;
+  --grid-line: rgba(40, 60, 120, 0.10);
+
+  --text: #131a30;
+  --text-dim: #4a567a;
+  --text-faint: #8590b3;
+
+  --border: rgba(40, 60, 120, 0.14);
+  --border-bright: rgba(40, 60, 120, 0.26);
+  --shadow: 0 18px 50px -22px rgba(40, 60, 120, 0.35);
+
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(46, 200, 190, 0.10), transparent 60%),
+    radial-gradient(1000px 700px at 95% 0%, rgba(120, 110, 230, 0.10), transparent 55%),
+    var(--bg-deep);
+}
+
+body.LightMode::before { opacity: 0.25; }
+
+.DarkMode, .LightMode {
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Reset the bootstrap modal text so ErrorModal reads correctly */
+::selection {
+  background: var(--cyan-soft);
+  color: var(--text);
+}

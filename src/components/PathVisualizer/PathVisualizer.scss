@@ -1,0 +1,58 @@
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px 50px;
+}
+
+.stage__hint {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  margin: 0 0 18px;
+  text-align: center;
+}
+.stage__hint b { color: var(--text-dim); font-weight: 700; }
+
+.grid-frame {
+  position: relative;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--grid-bg);
+  border: 1px solid var(--border-bright);
+  box-shadow: var(--shadow), inset 0 0 60px rgba(46, 230, 214, 0.04);
+}
+
+/* corner accents */
+.grid-frame::before,
+.grid-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--cyan);
+  border-style: solid;
+  opacity: 0.6;
+}
+.grid-frame::before {
+  top: 8px; left: 8px;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 8px;
+}
+.grid-frame::after {
+  bottom: 8px; right: 8px;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 8px;
+}
+
+.grid {
+  display: inline-block;
+  line-height: 0;
+  user-select: none;
+  cursor: crosshair;
+}
+
+/* legacy dark-mode hook kept harmless */
+.DarkMode .grid { background-color: transparent; }

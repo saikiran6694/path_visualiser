@@ -1,0 +1,48 @@
+.stats {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  min-width: 170px;
+}
+
+.stat__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 5px;
+}
+
+.stat__label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.stat__value {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat__track {
+  height: 5px;
+  border-radius: 4px;
+  background: var(--bg-panel-2);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.stat__fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 12px -2px currentColor;
+}

@@ -1,0 +1,15 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tame Bootstrap's aggressive defaults inside our themed shell */
+.app-shell {
+  .modal-content {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-bright);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+}
